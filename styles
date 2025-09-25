@@ -1,0 +1,1098 @@
+  <style>
+
+
+/* hover на заголовки таблиці */
+.statistics tr:hover {
+  background-color: #f0f0f0; /* світло-сірий фон */
+  color: #d9534f;             /* колір тексту при наведенні */
+  cursor: pointer;            /* показати, що можна клікати */
+}
+
+/* вигляд сортування - можна просто підсвітити */
+.statistics th.sorted-asc {
+  background-color: #d0ebff;  /* блакитний фон при сортуванні по зростанню */
+  color: #black;
+}
+
+.statistics th.sorted-desc {
+  background-color: #d9544f74;  /* зелений фон при сортуванні по спаданню */
+  color: #white;
+}
+
+
+    body {
+
+      font-family: sans-serif, Arial;
+
+      margin: 0;
+
+      background: #f0f0f0; /* фон за межами прямокутника */
+
+      color: #333;
+
+    }
+
+
+
+    /* довбаний контейнер */
+
+  .container {
+
+    max-width: 900px;   /* ширина */
+
+    margin: 0 auto;      /* поля зліва і справа */
+
+    padding: 20px;       /* відступи зліва іправа*/
+
+    background: #fff;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    display: flex;
+
+    flex-direction: column;
+
+    }
+
+
+
+    .header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      padding: 15px 40px;
+
+    }
+
+
+
+    .logo {
+
+      font-size: 38px;
+
+      font-weight: bold;
+
+      color: white;
+
+      font-family: Bebas Neue;
+
+      -webkit-text-stroke: 0;
+
+      text-shadow:
+
+        2px 0 0 black,
+
+        -1.5px 0 0 #d9534f,
+
+        0 -1.5px 0 #d9534f,
+
+        0 0 2px black;
+
+    }
+
+
+
+    .nav a {
+
+      display: left;
+
+      font-size: 18px;
+
+      margin: 0 10px;
+
+      text-decoration: none;
+
+      color: #d9534f;
+
+    }
+
+
+
+    .header-right {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 30px;
+
+      align-items: flex-end;
+
+    }
+
+
+
+    .header-left {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 30px;
+
+    }
+
+
+
+    .search-group {
+
+      display: flex;
+
+      gap: 10px;
+
+    }
+
+
+
+    .search-group input {
+
+      width: 180px;
+
+    }
+
+
+
+    .btn {
+
+      border: 1px solid #d9534f;
+
+      background: none;
+
+      padding: 6px 12px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .btn:hover {
+
+      background: #d9534f;
+
+      color: #fff;
+
+    }
+
+
+
+    .btn-add {
+
+      font-weight: bold;
+
+      color: #d9534f;
+
+      width: 150px;
+
+      height: 50px;
+
+      font-size: 18px;
+
+    }
+
+
+
+    main {
+
+      padding: 20px 0;
+
+    }
+
+
+
+h2 {
+
+  position: relative;
+
+  text-align: center;
+
+  margin: 30px 0 30px; /* відступ зверху і знизу */
+
+  padding: 0;
+
+}
+
+
+
+h2::before {
+
+  content: "";
+
+  display: block;
+
+  width: 500px;        /* довжина лінії */
+
+  height: 1px;         /* товщина лінії */
+
+  background-color: black;
+
+  margin: 0 auto 30px; /* центр і відступ до тексту */
+
+}
+
+
+
+    .filters {
+
+      display: flex;
+
+      gap: 0;
+
+      margin: 15px 0;
+
+      flex-wrap: wrap;
+
+    }
+
+
+
+
+
+    .filters input[type="checkbox"] { /* стиль чекбоксів */
+
+      width: 18px;
+
+      height: 18px;
+
+      cursor: pointer;
+
+      accent-color: #d9534f; 
+
+    }
+
+
+
+    .filters label { /* стиль текста аби ровнінько */
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      color: #333;
+
+    }
+
+
+
+    .filters select {
+
+      padding: 3px 6px;           /* відступи всередині */
+
+      border: 1px solid black;   /* рамка сайту */
+
+      background: #fff;             /* фон */
+
+      color: #333;                  /* текст */
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .teacher-list {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
+      gap: 20px;
+
+    }
+
+
+
+    .teacher-card {
+
+  display: block;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+
+  color: #111;
+
+  letter-spacing: 0.2px;
+
+  line-height: 1.2;
+
+    }
+
+
+
+    .teacher-card img {
+
+      width: 120px;
+
+      height: 120px;
+
+      border-radius: 50%;
+
+      border: 3px solid #f5a5a5;
+
+      object-fit: cover;
+
+    }
+
+
+
+
+
+    .circle {
+
+      width: 120px;
+
+      height: 120px;
+
+      border: 3px solid #f5a5a5;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-weight: bold;
+
+      font-size: 20px;
+
+      margin: auto;
+
+    }
+
+
+
+    .statistics table {
+
+      width: 100%;
+
+      border-collapse: collapse;
+
+    }
+
+
+
+    .statistics th, .statistics td {
+
+      padding: 8px;
+
+      text-align: center;
+
+      border: none;
+
+    }
+
+
+
+    /* cunty рожевий колір */
+
+    .statistics tbody tr:nth-child(odd) {
+
+      background-color: #fff;
+
+    }
+
+
+
+    .statistics tbody tr:nth-child(even) {
+
+      background-color: #F8F8FF;
+
+    }
+
+
+
+    .statistics thead tr {
+
+      border-bottom: 1px solid black; /* чорна полоска на низ */
+
+    }
+
+
+
+    .table-wrapper {
+
+      overflow-x: auto;
+
+    }
+
+
+
+    .footer {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 15px 40px;
+
+      border-top: 1px solid #ddd;
+
+      margin-top: 40px;
+
+    }
+
+
+
+    .footer a {
+
+      margin: 0 10px;
+
+      text-decoration: none;
+
+      color: #d9534f;
+
+    }
+
+
+
+    .dot-separator { /* крапки-розподілювачі */
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      height: 40px;      /* висота лінії з крапок */
+
+      margin: 0 12px;    /* відстань від фільтрів */
+
+    }
+
+
+
+    .dot-separator span { /* їх візуal налаштування */
+
+      display: block;
+
+      width: 2px;
+
+      height: 2px;
+
+      background-color: #ccc;
+
+      border-radius: 50%;
+
+    }
+
+/* пагінация пошла шобе можна було клацать сторінки */
+
+.pagination button {
+
+  -webkit-appearance: none; /* Safari/Chrome */
+
+  -moz-appearance: none;    /* Firefox */
+
+  appearance: none;         /* сучасні браузери */
+
+  border: 1px solid #333;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  padding: 6px 12px;
+
+}
+
+
+
+    .pagination button {
+
+      padding: 6px 12px;
+
+      border: 1px solid #333;
+
+      background: #fff;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .pagination button:disabled {
+
+      opacity: 0.5;
+
+      cursor: not-allowed;
+
+    }
+
+
+
+.favorites-wrapper {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  margin: 20px 0;
+
+}
+
+
+
+.favorites-list {
+
+  display: flex;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  gap: 20px;
+
+  padding: 10px 0;
+
+  flex: 1;
+
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+
+
+.favorites-list::-webkit-scrollbar {
+
+  display: none; /* ховаємо скролбар */
+
+}
+
+
+
+.scroll-btn {
+
+  border: none;           /* - рамку */
+
+  background: none;       /* - фон */
+
+  cursor: pointer;
+
+  width: 30px;
+
+  height: 30px;
+
+  padding: 0;             /* - внутрішні відступи */
+
+  outline: none;          /* - контур при фокусі */
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+
+/* лівий трикутник */
+
+.left-btn::before {
+
+  content: "";
+
+  display: block;
+
+  width: 0;
+
+  height: 0;
+
+  border-top: 15px solid transparent;
+
+  border-bottom: 15px solid transparent;
+
+  border-right: 20px solid #333; /* трикутник вліво */
+
+}
+
+
+
+/* правий трикутник */
+
+.right-btn::before {
+
+  content: "";
+
+  display: block;
+
+  width: 0;
+
+  height: 0;
+
+  border-top: 15px solid transparent;
+
+  border-bottom: 15px solid transparent;
+
+  border-left: 20px solid #333; /* трикутник вправо */
+
+}
+
+
+
+.teacher-card { /* вирівнює фото і текст по центру */
+
+  display: flex;
+
+  position: relative;
+
+  flex-direction: column;
+
+  align-items: center; 
+
+  cursor: pointer;
+
+}
+
+
+
+.teacher-card .star {
+
+  position: absolute;
+
+  top: 5px;
+
+  right: 5px;
+
+  font-size: 25px;
+
+  color: gold;
+
+  font-weight: bold;
+
+}
+
+
+
+/* Ім’я */
+
+.teacher-card p strong {
+
+  display: block;
+
+  line-height: 1.3; /* рівномірна висота рядка */
+
+  font-family: montserrat;
+
+  font-size: 18px;
+
+  color: #111;
+
+  letter-spacing: 1px;
+
+  text-align: center;
+
+}
+
+/* відступи в картках */
+.teacher-card p {
+  margin: 0;
+  line-height: 2.2; 
+}
+
+
+/* Спеціальність */
+
+.teacher-card p .spec {
+
+  display: block;
+
+  font-size: 14px;
+
+  color: #666;        
+
+  font-weight: normal;
+
+  font-family: montserrat;
+
+  display: block;
+
+  text-align: center;
+
+}
+
+
+
+/* Країна */
+
+.teacher-card p .country {
+
+  display: block;
+
+  font-size: 9px;
+
+  color: #999;        
+
+  font-family: montserrat;
+
+  display: block;
+
+  text-align: center;
+
+}
+
+
+
+.teacher-card .fname,
+
+.teacher-card .lname {
+
+  display: block; /* кожен окремо в новий рядок */
+
+}
+
+
+
+    /* ---------- попапи(( ---------- */
+
+
+
+.modal-overlay {
+
+  position: fixed;
+
+  inset: 0; 
+
+  background: rgba(0,0,0,0.6);
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 1000;
+
+}
+
+
+
+.modal-overlay.active {
+
+  display: flex;
+
+}
+
+
+
+.modal {
+
+  background: #fff;
+
+  border-radius: 8px;
+
+  max-width: 800px;
+
+  width: 100%;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+}
+
+
+
+.modal-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 12px 20px;
+
+  background: #000;
+
+  color: #fff;
+
+}
+
+
+
+.modal-header h3 {
+
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+}
+
+
+
+.modal-header .close-modal {
+
+  background: none;
+
+  border: none;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  color: #fff;
+
+}
+
+
+
+.modal-body {
+
+  display: flex;
+
+  gap: 20px;
+
+  padding: 20px;
+
+}
+
+
+
+.modal-body .left {
+
+  flex: 0 0 150px;
+
+}
+
+
+
+.modal-body .photo {
+
+  width: 250px;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+}
+
+
+
+.modal-body .right {
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+
+
+.modal-body .name {
+
+  font-size: 32px;
+
+  font-weight: normal;
+
+  margin-top: 0; /* прибирає зайвий верхній відступ у h2 */
+
+  margin-bottom: 10px !important;
+
+  font-family: montserrat;
+
+  color: #000;
+
+}
+
+
+
+.modal-body .name {
+
+  text-align: left !important;
+
+}
+
+
+
+.modal-body .spec {
+
+  color: black;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+}
+
+
+
+.modal-body .country,
+
+.modal-body .meta {
+
+  font-size: 14px;
+
+  margin-top: 9px !important;
+
+  color: #666;
+
+}
+
+
+
+.modal-body .contacts {
+
+  font-size: 14px;
+
+  color: #2a7bbf;
+
+}
+
+
+
+/* шобе ці відступи були */
+
+.modal-body .contacts {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px; /* між милом і мобвілой */
+
+  margin-top: 9px !important;
+
+  align-items: flex-start; 
+
+}
+
+
+
+/* примус відступ для дочірніх */
+
+.modal-body .contacts > * {
+
+  margin: 0 !important;
+
+  /* відступ знизу */
+
+  margin-top: 9px !important;
+
+}
+
+
+
+.modal .desc {
+
+  padding: 20px;
+
+  font-size: 14px;
+
+  font-family: montserrat;
+
+  color: #333;
+
+  line-height: 1.5;
+
+  border-top: none; /* тільки тут прибираємо */
+
+  
+
+}
+
+
+
+/* прибрати вонючу чорну полоску, поміг гпт */
+
+#modalInfo h2::before,
+
+#modalInfo h3::before,
+
+.modal h2::before,
+
+.modal h3::before,
+
+.modal-header h2::before,
+
+.modal-header h3::before {
+
+  display: none !important;
+
+  content: none !important;
+
+  width: 0 !important;
+
+  height: 0 !important;
+
+  background: transparent !important;
+
+  margin: 0 !important;
+
+}
+
+
+
+    @media (max-width: 768px) {
+
+      .header, .footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+      }
+
+
+
+      .teacher-list {
+
+        grid-template-columns: repeat(2, 1fr);
+
+      }
+
+
+
+      .header-right {
+
+        flex-direction: column;
+
+      }
+
+
+
+      .search-group {
+
+        flex-direction: column;
+
+      }
+
+    }
+
+  </style>
