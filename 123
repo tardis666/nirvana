@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Teachinder</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+
+      <div class="header-left">
+
+        <div class="logo">Teachinder</div>
+
+        <nav class="nav">
+
+          <a href="#">Teachers</a>
+
+          <a href="#">Statistics</a>
+
+          <a href="#">Favorites</a>
+
+          <a href="#">About</a>
+
+        </nav>
+
+      </div>
+
+      
+
+      <div class="header-right">
+
+        <div class="search-group">
+            <input type="text" id="searchInput" placeholder="Name, note or age to search">
+            <button class="btn" id="searchBtn">Search</button>
+        </div>
+
+        <button class="btn btn-add" id="openAdd">Add teacher</button>
+
+      </div>
+
+    </header>
+
+
+
+    <main>
+
+      <section class="teachers">
+
+        <h2>Top Teachers</h2>
+
+        <div class="filters">
+
+          <select id="filterAge"></select>
+
+            <div class="dot-separator">
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+            </div>
+
+          <select id="filterCountry"></select>
+
+            <div class="dot-separator">
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+            </div>
+
+          <select id="filterGender"></select>
+
+            <div class="dot-separator">
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+            </div>
+
+          <label><input type="checkbox"> Only with photo</label>
+
+              <div class="dot-separator">
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+    <span></span><span></span><span></span><span></span><span></span>
+
+            </div>
+
+  <label>
+    <input type="checkbox" id="filterFavorite">
+    Favorites
+  </label>
+
+        </div>
+
+        <div class="teacher-list">
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Ihor Tkachuk" 
+
+               data-speciality="Chemistry" 
+
+               data-age="29" 
+
+               data-country="Ukraine" 
+
+               data-email="ihor04ek@kgjhk.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://cdn.mos.cms.futurecdn.net/8F4ShXBH3m4eKkaKujgNdD-1200-80.jpg.webp">
+
+            <img src="https://cdn.mos.cms.futurecdn.net/8F4ShXBH3m4eKkaKujgNdD-1200-80.jpg.webp">
+
+            <p>
+
+              <strong>
+
+                <span class="name"> 
+
+                  <span class="fname">Ihor</span> 
+
+                  <span class="lname">Tkachuk</span>
+
+              </strong> 
+
+              <span class="spec">Chemistry</span>
+
+              <span class="country">Ukraine</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Pragg Rameshbabu" 
+
+               data-speciality="Chess" 
+
+               data-age="18" 
+
+               data-country="India" 
+
+               data-email="propuk@education.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Pragg</span> 
+
+                  <span class="lname">Rameshbabu</span>
+
+              </strong>
+
+              <span class="spec">Chess</span>
+
+              <span class="country">India</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Svitlana Barburik" 
+
+               data-speciality="English" 
+
+               data-age="25" 
+
+               data-country="Ukraine"
+
+               data-email="svetka@knlu.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Female"
+
+               data-photo="https://xboxwire.thesourcemediaassets.com/sites/2/2025/07/Hero-d19ccfa61f502e7b7fca.jpg">
+
+            <img src="https://xboxwire.thesourcemediaassets.com/sites/2/2025/07/Hero-d19ccfa61f502e7b7fca.jpg">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Svitlana</span> 
+
+                  <span class="lname">Barburik</span>
+
+              </strong>
+
+              <span class="spec">English</span>
+
+              <span class="country">Ukraine</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Neko Purrmeow" 
+
+               data-speciality="Mathematics" 
+
+               data-age="21" 
+
+               data-country="Poland" 
+
+               data-email="neko4an@senpai.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://static.wikia.nocookie.net/aesthetics/images/9/96/HTB1xhFkXyfrK1RjSspbxh74pFXav.jpg/revision/latest?cb=20200906154202">
+
+            <img src="https://static.wikia.nocookie.net/aesthetics/images/9/96/HTB1xhFkXyfrK1RjSspbxh74pFXav.jpg/revision/latest?cb=20200906154202">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Neko</span> 
+
+                  <span class="lname">Purrmeow</span>
+
+              </strong>
+
+              <span class="spec">Mathematics</span>
+
+              <span class="country">Poland</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Discord Moderator" 
+
+               data-speciality="All-knowing" 
+
+               data-age="28" 
+
+               data-country="United Kingdom" 
+
+               data-email="banhammer@discord.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://media.licdn.com/dms/image/v2/D4E03AQFaljxqA7pFRQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1686647371933?e=2147483647&v=beta&t=5R0BGII17unEvte-8etGrtuePllmKDaAZuM6OY6BtDY">
+
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQFaljxqA7pFRQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1686647371933?e=2147483647&v=beta&t=5R0BGII17unEvte-8etGrtuePllmKDaAZuM6OY6BtDY">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Discord</span> 
+
+                  <span class="lname">Moderator</span>
+
+              </strong>
+
+              <span class="spec">All-knowing</span>
+
+              <span class="country">United Kingdom</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Floptropican expert" 
+
+               data-speciality="DIVA" 
+
+               data-age="30" 
+
+               data-country="Floptropica" 
+
+               data-email="flop@floptropica.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Female"
+
+               data-photo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbe9L9Pfw05kCzxRCXtTzVaAlL4pZu8QNIAw&s">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbe9L9Pfw05kCzxRCXtTzVaAlL4pZu8QNIAw&s">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Floptropican</span> 
+
+                  <span class="lname">expert</span>
+
+              </strong>
+
+              <span class="spec">DIVA</span>
+
+              <span class="country">Floptropica</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Wednesday Addams" 
+
+               data-speciality="Dancing" 
+
+               data-age="23" 
+
+               data-country="Nevermore" 
+
+               data-email="wednesday228@nevermore.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Female"
+
+               data-photo="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQTT0MJwI4k9iSQ-KjZsvxON0tdOJjTLvz7vChgmRiNwYtc48mFqIzT8sefe3ZvovLWGoHH5yj4l2wu5Imh445zRIJq2pprHX919FmQ5tw9WmK0KroHiu4aymmgDypZmTP3T7um9NC7vGPOgHFziJbC9v1V4.jpg?r=414">
+
+            <img src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQTT0MJwI4k9iSQ-KjZsvxON0tdOJjTLvz7vChgmRiNwYtc48mFqIzT8sefe3ZvovLWGoHH5yj4l2wu5Imh445zRIJq2pprHX919FmQ5tw9WmK0KroHiu4aymmgDypZmTP3T7um9NC7vGPOgHFziJbC9v1V4.jpg?r=414">
+
+            <div class="star">⭐</div>
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Wednesday</span> 
+
+                  <span class="lname">Addams</span>
+
+              </strong>
+
+              <span class="spec">Dancing</span>
+
+              <span class="country">Nevermore</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Serhii Kvit" 
+
+               data-speciality="Speech" 
+
+               data-age="30" 
+
+               data-country="Ukraine" 
+
+               data-email="sirozha@gmail.com"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://cdn.forumkyiv.org/468310e2-da41-498b-818a-d8cdc878c370.jpg">
+
+            <img src="https://cdn.forumkyiv.org/468310e2-da41-498b-818a-d8cdc878c370.jpg">
+
+            <div class="star">⭐</div>
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Serhii</span> 
+
+                  <span class="lname">Kvit</span>
+
+              </strong>
+
+              <span class="spec">King</span>
+
+              <span class="country">Kyiv</span>
+
+            </p>
+
+          </div>
+
+<script type="module" src="./FE4U-Lab2-mock.js"></script>
+<script type="module" src="./helpers.js"></script>
+<script type="module" src="./main.js"></script>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="statistics" id="teacherTable">
+
+        <h2>Statistics</h2>
+
+        <div class="table-wrapper">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>Name</th><th>Speciality</th><th>Age</th><th>Gender</th><th>Nationality</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="tableBody">
+
+              <tr><td>Daisy Alexander</td><td>Chemistry</td><td>28</td><td>Female</td><td>Vietnam</td></tr>
+
+              <tr><td>Julia Bradley</td><td>Math</td><td>26</td><td>Female</td><td>USA</td></tr>
+
+              <tr><td>Jonathan Jacobs</td><td>Math</td><td>32</td><td>Male</td><td>England</td></tr>
+
+              <tr><td>Emily Carter</td><td>English</td><td>19</td><td>Female</td><td>USA</td></tr>
+
+              <tr><td>Daniel Novak</td><td>Physics</td><td>22</td><td>Male</td><td>Czech Republic</td></tr>
+
+              <tr><td>Sophia Ivanova</td><td>Math</td><td>20</td><td>Female</td><td>Ukraine</td></tr>
+
+              <tr><td>Liam Smith</td><td>History</td><td>23</td><td>Male</td><td>England</td></tr>
+
+              <tr><td>Ana Rodríguez</td><td>Chemistry</td><td>25</td><td>Female</td><td>Spain</td></tr>
+
+              <tr><td>Mateusz Kowalski</td><td>Biology</td><td>24</td><td>Male</td><td>Poland</td></tr>
+
+              <tr><td>Isabella Moretti</td><td>Music</td><td>18</td><td>Female</td><td>Italy</td></tr>
+
+              <tr><td>Noah Brown</td><td>Math</td><td>21</td><td>Male</td><td>Canada</td></tr>
+
+              <tr><td>Hana Kim</td><td>Literature</td><td>27</td><td>Female</td><td>South Korea</td></tr>
+
+              <tr><td>Omar Hassan</td><td>Computer Science</td><td>29</td><td>Male</td><td>Egypt</td></tr>
+
+              <tr><td>Chloe Dubois</td><td>Art</td><td>26</td><td>Female</td><td>France</td></tr>
+
+              <tr><td>Yuki Tanaka</td><td>Math</td><td>20</td><td>Female</td><td>Japan</td></tr>
+
+              <tr><td>Lucas Silva</td><td>Geography</td><td>28</td><td>Male</td><td>Brazil</td></tr>
+
+              <tr><td>Victoria Müller</td><td>Chemistry</td><td>23</td><td>Female</td><td>Germany</td></tr>
+
+              <tr><td>Andrei Petrescu</td><td>History</td><td>30</td><td>Male</td><td>Romania</td></tr>
+
+              <tr><td>Nora Lindberg</td><td>Philosophy</td><td>21</td><td>Female</td><td>Sweden</td></tr>
+
+              <tr><td>Felix Hansen</td><td>Biology</td><td>25</td><td>Male</td><td>Denmark</td></tr>
+
+              <tr><td>Maria Santos</td><td>Math</td><td>19</td><td>Female</td><td>Portugal</td></tr>
+
+              <tr><td>Adam Johnson</td><td>Computer Science</td><td>28</td><td>Male</td><td>USA</td></tr>
+
+              <tr><td>Elena Petrova</td><td>Physics</td><td>24</td><td>Female</td><td>Ukraine</td></tr>
+
+              <tr><td>David Lee</td><td>Economics</td><td>31</td><td>Male</td><td>USA</td></tr>
+
+              <tr><td>Anna Kowalska</td><td>Math</td><td>20</td><td>Female</td><td>Poland</td></tr>
+
+              <tr><td>Markus Steiner</td><td>Chemistry</td><td>27</td><td>Male</td><td>Austria</td></tr>
+
+              <tr><td>Hannah Green</td><td>Biology</td><td>23</td><td>Female</td><td>England</td></tr>
+
+              <tr><td>Pedro Alvarez</td><td>Physics</td><td>22</td><td>Male</td><td>Mexico</td></tr>
+
+              <tr><td>Mia Rossi</td><td>Art</td><td>21</td><td>Female</td><td>Italy</td></tr>
+
+              <tr><td>Ivan Horvat</td><td>History</td><td>30</td><td>Male</td><td>Croatia</td></tr>
+
+              <tr><td>Sara Johansson</td><td>Music</td><td>18</td><td>Female</td><td>Sweden</td></tr>
+
+              <tr><td>Thomas White</td><td>English</td><td>25</td><td>Male</td><td>Canada</td></tr>
+
+              <tr><td>Laura Meier</td><td>Math</td><td>19</td><td>Female</td><td>Germany</td></tr>
+
+              <tr><td>Arjun Patel</td><td>Chemistry</td><td>29</td><td>Male</td><td>India</td></tr>
+
+              <tr><td>Sofia Costa</td><td>Literature</td><td>20</td><td>Female</td><td>Portugal</td></tr>
+
+              <tr><td>Michael Brown</td><td>Economics</td><td>28</td><td>Male</td><td>USA</td></tr>
+
+              <tr><td>Julia Schneider</td><td>Math</td><td>22</td><td>Female</td><td>Germany</td></tr>
+
+              <tr><td>Ali Rahman</td><td>Biology</td><td>24</td><td>Male</td><td>Pakistan</td></tr>
+
+              <tr><td>Eva Novak</td><td>Philosophy</td><td>27</td><td>Female</td><td>Slovakia</td></tr>
+
+              <tr><td>George Wilson</td><td>Physics</td><td>31</td><td>Male</td><td>England</td></tr>
+
+              <tr><td>Isla MacDonald</td><td>History</td><td>19</td><td>Female</td><td>Scotland</td></tr>
+
+              <tr><td>Diego Martinez</td><td>Math</td><td>23</td><td>Male</td><td>Argentina</td></tr>
+
+              <tr><td>Olga Shevchenko</td><td>Chemistry</td><td>25</td><td>Female</td><td>Ukraine</td></tr>
+
+              <tr><td>Henry Taylor</td><td>Biology</td><td>21</td><td>Male</td><td>USA</td></tr>
+
+              <tr><td>Camila López</td><td>Art</td><td>20</td><td>Female</td><td>Chile</td></tr>
+
+              <tr><td>Jason Kim</td><td>Computer Science</td><td>26</td><td>Male</td><td>South Korea</td></tr>
+
+              <tr><td>Katarzyna Nowak</td><td>Music</td><td>24</td><td>Female</td><td>Poland</td></tr>
+
+              <tr><td>Benjamin Clark</td><td>Math</td><td>30</td><td>Male</td><td>Australia</td></tr>
+
+              <tr><td>Amira Saleh</td><td>Chemistry</td><td>22</td><td>Female</td><td>Egypt</td></tr>
+
+              <tr><td>Oliver Jensen</td><td>Physics</td><td>28</td><td>Male</td><td>Denmark</td></tr>
+
+              <tr><td>Helena Popescu</td><td>Biology</td><td>23</td><td>Female</td><td>Romania</td></tr>
+
+              <tr><td>Juan Torres</td><td>Geography</td><td>20</td><td>Male</td><td>Spain</td></tr>
+
+              <tr><td>Charlotte Evans</td><td>Literature</td><td>21</td><td>Female</td><td>Ireland</td></tr>
+
+            </tbody>
+
+          </table>
+
+          <div class="pagination">
+
+          <button id="prevBtn">Prev</button>
+
+          <span id="pageInfo"></span>
+
+          <button id="nextBtn">Next</button>
+
+  </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="favorites">
+
+<h2>Favorites</h2>
+
+  <div class="favorites-wrapper">
+
+    <button class="scroll-btn left-btn"></button>
+
+    <div class="favorites-list">
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Ihor Tkachuk" 
+
+               data-speciality="Chemistry" 
+
+               data-age="29" 
+
+               data-country="Ukraine" 
+
+               data-email="ihor04ek@kgjhk.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://cdn.mos.cms.futurecdn.net/8F4ShXBH3m4eKkaKujgNdD-1200-80.jpg.webp">
+
+            <img src="https://cdn.mos.cms.futurecdn.net/8F4ShXBH3m4eKkaKujgNdD-1200-80.jpg.webp">
+
+            <p>
+
+              <strong>
+
+                <span class="name"> 
+
+                  <span class="fname">Ihor</span> 
+
+                  <span class="lname">Tkachuk</span>
+
+              </strong> 
+
+              <span class="spec">Chemistry</span>
+
+              <span class="country">Ukraine</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Pragg Rameshbabu" 
+
+               data-speciality="Chess" 
+
+               data-age="18" 
+
+               data-country="India" 
+
+               data-email="propuk@education.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Pragg</span> 
+
+                  <span class="lname">Rameshbabu</span>
+
+              </strong>
+
+              <span class="spec">Chess</span>
+
+              <span class="country">India</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Svitlana Barburik" 
+
+               data-speciality="English" 
+
+               data-age="25" 
+
+               data-country="Ukraine"
+
+               data-email="svetka@knlu.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Female"
+
+               data-photo="https://xboxwire.thesourcemediaassets.com/sites/2/2025/07/Hero-d19ccfa61f502e7b7fca.jpg">
+
+            <img src="https://xboxwire.thesourcemediaassets.com/sites/2/2025/07/Hero-d19ccfa61f502e7b7fca.jpg">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Svitlana</span> 
+
+                  <span class="lname">Barburik</span>
+
+              </strong>
+
+              <span class="spec">English</span>
+
+              <span class="country">Ukraine</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Neko Purrmeow" 
+
+               data-speciality="Mathematics" 
+
+               data-age="21" 
+
+               data-country="Poland" 
+
+               data-email="neko4an@senpai.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://static.wikia.nocookie.net/aesthetics/images/9/96/HTB1xhFkXyfrK1RjSspbxh74pFXav.jpg/revision/latest?cb=20200906154202">
+
+            <img src="https://static.wikia.nocookie.net/aesthetics/images/9/96/HTB1xhFkXyfrK1RjSspbxh74pFXav.jpg/revision/latest?cb=20200906154202">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Neko</span> 
+
+                  <span class="lname">Purrmeow</span>
+
+              </strong>
+
+              <span class="spec">Mathematics</span>
+
+              <span class="country">Poland</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Discord Moderator" 
+
+               data-speciality="All-knowing" 
+
+               data-age="28" 
+
+               data-country="United Kingdom" 
+
+               data-email="banhammer@discord.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://media.licdn.com/dms/image/v2/D4E03AQFaljxqA7pFRQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1686647371933?e=2147483647&v=beta&t=5R0BGII17unEvte-8etGrtuePllmKDaAZuM6OY6BtDY">
+
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQFaljxqA7pFRQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1686647371933?e=2147483647&v=beta&t=5R0BGII17unEvte-8etGrtuePllmKDaAZuM6OY6BtDY">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Discord</span> 
+
+                  <span class="lname">Moderator</span>
+
+              </strong>
+
+              <span class="spec">All-knowing</span>
+
+              <span class="country">United Kingdom</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Floptropican expert" 
+
+               data-speciality="DIVA" 
+
+               data-age="30" 
+
+               data-country="Floptropica" 
+
+               data-email="flop@floptropica.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Female"
+
+               data-photo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbe9L9Pfw05kCzxRCXtTzVaAlL4pZu8QNIAw&s">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbe9L9Pfw05kCzxRCXtTzVaAlL4pZu8QNIAw&s">
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Floptropican</span> 
+
+                  <span class="lname">expert</span>
+
+              </strong>
+
+              <span class="spec">DIVA</span>
+
+              <span class="country">Floptropica</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Wednesday Addams" 
+
+               data-speciality="Dancing" 
+
+               data-age="23" 
+
+               data-country="Nevermore" 
+
+               data-email="wednesday228@nevermore.edu"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Female"
+
+               data-photo="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQTT0MJwI4k9iSQ-KjZsvxON0tdOJjTLvz7vChgmRiNwYtc48mFqIzT8sefe3ZvovLWGoHH5yj4l2wu5Imh445zRIJq2pprHX919FmQ5tw9WmK0KroHiu4aymmgDypZmTP3T7um9NC7vGPOgHFziJbC9v1V4.jpg?r=414">
+
+            <img src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQTT0MJwI4k9iSQ-KjZsvxON0tdOJjTLvz7vChgmRiNwYtc48mFqIzT8sefe3ZvovLWGoHH5yj4l2wu5Imh445zRIJq2pprHX919FmQ5tw9WmK0KroHiu4aymmgDypZmTP3T7um9NC7vGPOgHFziJbC9v1V4.jpg?r=414">
+
+            <div class="star">⭐</div>
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Wednesday</span> 
+
+                  <span class="lname">Addams</span>
+
+              </strong>
+
+              <span class="spec">Dancing</span>
+
+              <span class="country">Nevermore</span>
+
+            </p>
+
+          </div>
+
+          <div class="teacher-card openInfo" 
+
+               data-name="Serhii Kvit" 
+
+               data-speciality="Speech" 
+
+               data-age="30" 
+
+               data-country="Ukraine" 
+
+               data-email="sirozha@gmail.com"
+
+               data-phone="+1 234 567 890"
+
+               data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremaliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis..."
+
+               data-gender="Male"
+
+               data-photo="https://cdn.forumkyiv.org/468310e2-da41-498b-818a-d8cdc878c370.jpg">
+
+            <img src="https://cdn.forumkyiv.org/468310e2-da41-498b-818a-d8cdc878c370.jpg">
+
+            <div class="star">⭐</div>
+
+            <p>
+
+              <strong>
+
+                <span class="name">
+
+                  <span class="fname">Serhii</span> 
+
+                  <span class="lname">Kvit</span>
+
+              </strong>
+
+              <span class="spec">King</span>
+
+              <span class="country">Kyiv</span>
+
+            </p>
+
+          </div>
+
+    </div>
+
+            <button class="scroll-btn right-btn"></button>
+
+          </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+
+    <footer class="footer">
+
+      <nav>
+
+        <a href="#">Teachers</a>
+
+        <a href="#">Statistics</a>
+
+        <a href="#">Favorites</a>
+
+        <a href="#">About</a>
+
+      </nav>
+
+      <button class="btn btn-add" id="openAddFooter">Add teacher</button>
+
+    </footer>
+
+  </div>
+
+
+
+  <!-- тічер інфо -->
+
+ <div class="modal-overlay" id="modalInfo">
+
+  <div class="modal">
+
+    <div class="modal-header">
+
+      <h3>Teacher Info</h3>
+
+      <button class="close-modal">&times;</button>
+
+    </div>
+
+    <div class="modal-body">
+
+      <div class="left">
+
+        <img alt="Teacher photo" class="photo" id="infoPhoto"> <!-- аби фотку показувало-->
+
+      </div>
+
+      <div class="right">
+
+        <h2 class="name" id="infoName">Teacher Name</h2>
+
+        <div class="spec" id="infoSpeciality">Speciality</div>
+
+        <div class="country" id="infoCountry">Country</div>
+
+        <div class="meta" id="infoMeta">Age, Gender</div>
+
+        <div class="contacts">
+
+          <div id="infoEmail"></div>
+
+          <div id="infoPhone"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="desc" id="infoDesc">
+
+      Teacher description goes here.
+
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="./scripts.js"></script>
+
+</body>
+
+
+</html>

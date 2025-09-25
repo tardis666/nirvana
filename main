@@ -1,0 +1,105 @@
+import { randomUserMock, additionalUsers } from './FE4U-Lab2-mock.js';
+import { formatUsers } from './helpers.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.teacher-list');
+  const filterCountry = document.getElementById('filterCountry');
+  const filterAge = document.getElementById('filterAge');
+  const filterGender = document.getElementById('filterGender');
+  const filterFavorite = document.getElementById('filterFavorite');
+
+  // форматуєм користувачів
+  let teachers = formatUsers(randomUserMock, additionalUsers);
+  teachers.forEach(t => t.favorite = false); // всі спочатку не фаворити
+
+  //  Рендер карток 
+  function render(users) {
+    container.innerHTML = '';
+    users.forEach(u => {
+      const div = document.createElement('div');
+      div.classList.add('teacher-card', 'openInfo');
+      div.dataset.id = u.id;
+      div.dataset.name = u.full_name;
+      div.dataset.speciality = u.course;
+      div.dataset.country = u.country;
+      div.dataset.age = u.age;
+      div.dataset.gender = u.gender;
+      div.dataset.favorite = u.favorite;
+      div.dataset.photo = u.picture_large;
+      div.dataset.email = u.email;
+      div.dataset.phone = u.phone;
+      div.dataset.desc = u.note || "No description";
+
+      div.innerHTML = `
+        <img src="${u.picture_large}" alt="${u.full_name}">
+        <p>
+          <strong>${u.full_name}</strong>
+          <span class="spec">${u.course}</span>
+          <span class="country">${u.country}</span>
+        </p> 
+        <span class="star">${u.favorite ? '★' : '☆'}</span>
+      `;
+//чучут помінять
+      container.appendChild(div);
+    });
+  }
+
+  render(teachers);
+
+  //  Event delegation для зірочок і модалки 
+  container.addEventListener('click', (e) => {
+    const card = e.target.closest('.teacher-card');
+    if (!card) return;
+
+    // Favorites toggle
+    if (e.target.classList.contains('star')) {
+      e.stopPropagation();
+      const teacher = teachers.find(t => t.id === card.dataset.id);
+      if (teacher) {
+        teacher.favorite = !teacher.favorite;
+        e.target.textContent = teacher.favorite ? '★' : '☆';
+      }
+      applyFilters(); // щоб чекбокс Favorites оновлювався
+      return;
+    }
+
+    const modalInfo = document.getElementById('modalInfo');
+    modalInfo.querySelector('.modal-body .photo').src = card.dataset.photo;
+    modalInfo.querySelector('.modal-body .name').textContent = card.dataset.name;
+    modalInfo.querySelector('.modal-body .spec').textContent = card.dataset.speciality;
+    modalInfo.querySelector('.modal-body .country').textContent = card.dataset.country;
+    modalInfo.querySelector('.modal-body .contacts .email').innerHTML = card.dataset.email ? `<a href="mailto:${card.dataset.email}">${card.dataset.email}</a>` : '';
+    modalInfo.querySelector('.modal-body .contacts .phone').innerHTML = card.dataset.phone ? `<a href="tel:${card.dataset.phone}">${card.dataset.phone}</a>` : '';
+    modalInfo.querySelector('.modal-body .desc').textContent = card.dataset.desc;
+    modalInfo.classList.add('active');
+    document.body.classList.add('modal-open');
+  });
+
+  //  Populate filters 
+  function populateFilters(users) {
+    function fillSelect(select, values) {
+      values = [...new Set(values)].sort();
+      select.innerHTML = '';
+      select.appendChild(new Option('All', ''));
+      values.forEach(v => select.appendChild(new Option(v, v)));
+    }
+
+    fillSelect(filterCountry, users.map(u => u.country));
+    fillSelect(filterAge, users.map(u => u.age));
+    fillSelect(filterGender, users.map(u => u.gender));
+  }
+
+  populateFilters(teachers);
+
+  //  Фільтрація 
+  function applyFilters() {
+    let filtered = [...teachers];
+    if (filterCountry.value) filtered = filtered.filter(t => t.country === filterCountry.value);
+    if (filterAge.value) filtered = filtered.filter(t => t.age === parseInt(filterAge.value));
+    if (filterGender.value) filtered = filtered.filter(t => t.gender === filterGender.value);
+    if (filterFavorite.checked) filtered = filtered.filter(t => t.favorite);
+    render(filtered);
+  }
+
+  [filterCountry, filterAge, filterGender, filterFavorite].forEach(el => el.addEventListener('change', applyFilters));
+});
